@@ -1,0 +1,48 @@
+/* Import the COLORS object from the specified file */
+@import '../../values/colors';
+
+.toDoWrapper {
+  background: $darkPurple;
+  border-radius: 5px;
+  padding: 2rem;
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  min-height: calc(100vh - 250px); /* Set min-height to viewport height minus top bar height */
+}
+
+.name-input-style {
+  padding: 8px 20px;
+  border-radius: 2px;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  margin-bottom: 16px;
+  border: 1px solid $white;
+  text-transform: capitalize;
+}
+
+.todoform{
+  display: flex;
+}
+
+InputField {
+  flex: 3; /* Takes up 75% of the available space */
+  /* Additional styling for InputField */
+}
+
+.todo-btn {
+  flex: 1; /* Takes up 25% of the available space */
+  width: auto; /* Allow the button to adjust its width based on content */
+  margin-left: 10px; /* Add some spacing between the input and button */
+}
+
+
+
+
+
+

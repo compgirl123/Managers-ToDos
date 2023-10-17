@@ -1,0 +1,32 @@
+/* Import the COLORS object from the specified file */
+@import '../../values/colors';
+
+.toDo {
+  background: $lightPurple;
+  color: $white;
+  display: flex;
+  align-items: center; /* Vertically center content */
+  padding: 0rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.delete-icon {
+  margin-left: auto; /* Add space between the "edit" and "delete" icons*/
+}
+
+////////////////////////
+// PLEASE DO NOT DELETE
+////////////////////////
+
+// Old Code to uncomment later when Edit Functionality is added
+/*.edit-icon {
+  margin-left: auto; /* Push only the "edit" icon to the right
+}
+
+.delete-icon {
+  margin-left: 1rem; /* Add space between the "edit" and "delete" icons
+}*/
+
+

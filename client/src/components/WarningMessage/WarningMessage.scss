@@ -1,0 +1,8 @@
+/* Import the COLORS object from the specified file */
+@import '../../values/colors';
+
+.warningMessage{
+  color:$white;
+  text-align:center;
+  background-color:$warningRed;
+}

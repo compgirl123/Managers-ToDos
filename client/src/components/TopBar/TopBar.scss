@@ -1,0 +1,35 @@
+/* Import the COLORS object from the specified file */
+@import '../../values/colors';
+
+.navBar{
+  background-color:blueviolet;
+}
+
+.topBar {
+  background-color: $darkPurple;
+  width: 100%;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: absolute;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.menu ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  cursor: pointer;
+}
+
+.menu li:hover {
+  text-decoration: underline;
+}

@@ -8,6 +8,7 @@ export const fetchLogin = createAsyncThunk(
       // Send a POST request with email and password
     //const response = await fetch(`${URL}/login/`, {
     const response = await fetch(`https://managers-todos0.onrender.com/login`, {
+      //const response = await fetch(`login/`, {
         //mode: "no-cors",
         method: 'POST',
         headers: {

@@ -8,10 +8,15 @@ const app = express();
 app.use(
   cors({
     origin: ["http://localhost:3000", "https://managers-todos0.onrender.com", "https://managers-todos.onrender.com"],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    optionsSuccessStatus: 204,
   })
 );
 
+
 app.use(express.json());
+
 
 
 const db = mysql.createPool({
@@ -25,7 +30,7 @@ const db = mysql.createPool({
 app.use((req, res, next) => {
   //res.header("Access-Control-Allow-Origin", "https://managers-todos0.onrender.com");
   //res.setHeader("Access-Control-Allow-Origin", "https://managers-todos0.onrender.com");
-  res.setHeader("Access-Control-Allow-Origin", "https://managers-todos0.onrender.com");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"

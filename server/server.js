@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://managers-todos.onrender.com"],
+    origin: ["http://localhost:3000", "https://managers-todos0.onrender.com", "https://managers-todos.onrender.com"],
   })
 );
 
@@ -25,7 +25,7 @@ const db = mysql.createPool({
 app.use((req, res, next) => {
   //res.header("Access-Control-Allow-Origin", "https://managers-todos0.onrender.com");
   //res.setHeader("Access-Control-Allow-Origin", "https://managers-todos0.onrender.com");
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "https://managers-todos0.onrender.com");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"

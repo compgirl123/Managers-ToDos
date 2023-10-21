@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+import { URL } from "../App";
 // Fetches alltasks in db
 export const fetchTodos = createAsyncThunk(
-  `${URL}/todos/fetchTodos`,
+  'todos/fetchTodos',
   async (_, thunkAPI) => {
     try {
-      const response = await fetch('/todos');
+      const response = await fetch(`${URL}/todos`);
       if (!response.ok) {
         throw new Error(`Failed to fetch: ${response.status}`);
       }
@@ -20,10 +20,10 @@ export const fetchTodos = createAsyncThunk(
 
 // Adds a task to db
 export const addTask = createAsyncThunk(
-  `${URL}/todos/addTask`,
+  'todos/addTask',
   async (newTask, thunkAPI) => {
     try {
-      const response = await fetch('/addTask', {
+      const response = await fetch(`${URL}/addTask`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ export const deleteTask = createAsyncThunk(
   'todos/deleteTask',
   async (taskIdToDelete, thunkAPI) => {
     try {
-      const response = await fetch('/deleteTask', {
+      const response = await fetch(`${URL}/deleteTask`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

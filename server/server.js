@@ -7,7 +7,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://managers-todos0.onrender.com", "https://managers-todos.onrender.com"],
+    //origin: ["http://localhost:3000", "https://managers-todos0.onrender.com", "https://managers-todos.onrender.com"],
+    origin: ["*"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 204,

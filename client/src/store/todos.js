@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // Fetches alltasks in db
 export const fetchTodos = createAsyncThunk(
-  'todos/fetchTodos',
+  `${URL}/todos/fetchTodos`,
   async (_, thunkAPI) => {
     try {
       const response = await fetch('/todos');
@@ -20,7 +20,7 @@ export const fetchTodos = createAsyncThunk(
 
 // Adds a task to db
 export const addTask = createAsyncThunk(
-  'todos/addTask',
+  `${URL}/todos/addTask`,
   async (newTask, thunkAPI) => {
     try {
       const response = await fetch('/addTask', {

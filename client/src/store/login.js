@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { URL } from "../App";
 
 export const fetchLogin = createAsyncThunk(
-  'login/fetchLogin',
+  `${URL}/login/fetchLogin`,
   async (userCredentials) => {
     try {
       // Send a POST request with email and password

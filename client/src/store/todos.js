@@ -6,7 +6,7 @@ export const fetchTodos = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       //const response = await fetch(`${URL}/todos`);
-      const response = await fetch(`/todos`);
+      const response = await fetch(`https://managers-todos0.onrender.com/todos`);
       if (!response.ok) {
         throw new Error(`Failed to fetch: ${response.status}`);
       }
@@ -25,7 +25,7 @@ export const addTask = createAsyncThunk(
   async (newTask, thunkAPI) => {
     try {
       //const response = await fetch(`${URL}/addTask`, {
-      const response = await fetch(`/addTask`, {
+      const response = await fetch(`https://managers-todos0.onrender.com/addTask`, {
         mode: 'no-cors',
         method: 'POST',
         headers: {
@@ -48,7 +48,7 @@ export const deleteTask = createAsyncThunk(
   async (taskIdToDelete, thunkAPI) => {
     try {
       //const response = await fetch(`${URL}/deleteTask`, {
-     const response = await fetch(`/deleteTask`, {
+     const response = await fetch(`https://managers-todos0.onrender.com/deleteTask`, {
         mode: 'no-cors',
         method: 'POST',
         headers: {

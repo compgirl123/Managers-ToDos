@@ -2,14 +2,13 @@ const express = require('express');
 require('dotenv').config({ path: '../.env' });
 const mysql = require('mysql');
 const cors = require('cors');
-
 const app = express();
 
 //app.use(cors());
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5000", "https://managers-todos0.onrender.com"],
+    origin: "https://managers-todos0.onrender.com",
   })
 );
 

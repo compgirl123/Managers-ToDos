@@ -30,6 +30,9 @@ i18n
     },
   });
 
+
+export const URL = process.env.REACT_APP_SERVER_URL;
+
 export const App = () => {
   const dispatch = useDispatch();
 

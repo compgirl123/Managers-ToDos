@@ -5,8 +5,13 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
+app.use(
+  cors({
+    origin: ["http://localhost:5000", "https://managers-todos0.onrender.com"],
+  })
+);
 
 const db = mysql.createPool({
   host: process.env.DB_HOST,

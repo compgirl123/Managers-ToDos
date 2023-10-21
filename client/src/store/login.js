@@ -6,10 +6,14 @@ export const fetchLogin = createAsyncThunk(
   async (userCredentials) => {
     try {
       // Send a POST request with email and password
-      const response = await fetch(`${URL}/login`, {
+    //const response = await fetch(`${URL}/login/`, {
+    const response = await fetch(`https://managers-todos0.onrender.com/login`, {
+        //mode: "no-cors",
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          // Add the following line to include credentials (cookies) in the request
+          credentials: 'include',
         },
         body: JSON.stringify(userCredentials),
       });

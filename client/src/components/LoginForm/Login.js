@@ -27,6 +27,7 @@ export const Login = (props) => {
     dispatch(fetchLogin(userCredentials)).then((result)=>{
       if (result.payload.error) {
         // Handle the error here
+        console.log(result.payload);
         console.log('Login failed:', result.payload.error);
         setError(true);
       } else {

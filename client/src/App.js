@@ -31,7 +31,8 @@ i18n
   });
 
 
-export const URL = "https://managers-todos0.onrender.com";
+//export const URL = "https://managers-todos0.onrender.com";
+export const URL = process.env.REACT_APP_SERVER_URL;
 
 export const App = () => {
   const dispatch = useDispatch();

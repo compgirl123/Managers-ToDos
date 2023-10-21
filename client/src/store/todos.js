@@ -5,7 +5,8 @@ export const fetchTodos = createAsyncThunk(
   'todos/fetchTodos',
   async (_, thunkAPI) => {
     try {
-      const response = await fetch(`${URL}/todos`);
+      //const response = await fetch(`${URL}/todos`);
+      const response = await fetch(`/todos`);
       if (!response.ok) {
         throw new Error(`Failed to fetch: ${response.status}`);
       }
@@ -23,7 +24,9 @@ export const addTask = createAsyncThunk(
   'todos/addTask',
   async (newTask, thunkAPI) => {
     try {
-      const response = await fetch(`${URL}/addTask`, {
+      //const response = await fetch(`${URL}/addTask`, {
+      const response = await fetch(`/addTask`, {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,7 +47,9 @@ export const deleteTask = createAsyncThunk(
   'todos/deleteTask',
   async (taskIdToDelete, thunkAPI) => {
     try {
-      const response = await fetch(`${URL}/deleteTask`, {
+      //const response = await fetch(`${URL}/deleteTask`, {
+     const response = await fetch(`/deleteTask`, {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

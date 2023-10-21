@@ -1,23 +1,25 @@
 const express = require('express');
-require('dotenv').config({ path: '../.env' });
-const mysql = require('mysql');
-const cors = require('cors');
+const cors = require("cors");
 const app = express();
 
-
-app.use(
+require('dotenv').config({ path: '../.env' });
+const mysql = require('mysql');
+/*app.use(
   cors({
-    //origin: ["http://localhost:3000", "https://managers-todos0.onrender.com", "https://managers-todos.onrender.com"],
-    origin: ["*"],
+    origin: ["http://localhost:3000", "https://managers-todos0.onrender.com", "https://managers-todos.onrender.com"],
+    //origin: ["*"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 204,
   })
-);
-
-
+);*/
 app.use(express.json());
-
+-app.use(express.urlencoded({ extended: false }));
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://managers-todos.onrender.com"],
+  })
+);
 
 
 const db = mysql.createPool({

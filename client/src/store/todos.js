@@ -7,7 +7,7 @@ export const fetchTodos = createAsyncThunk(
     try {
       //const response = await fetch(`${URL}/todos`);
       //const response = await fetch(`https://managers-todos0.onrender.com/todos`);
-      const response = await fetch(`/todos`);
+      const response = await fetch(`https://managers-todos0.onrender.com/todos`);
       if (!response.ok) {
         throw new Error(`Failed to fetch: ${response.status}`);
       }

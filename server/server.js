@@ -1,26 +1,14 @@
-const express = require('express');
-const cors = require("cors");
+const express = require('express')
+require('dotenv').config({ path: '../.env' })
+const mysql = require('mysql')
+const cors = require('cors')
+const corsOptions = require('../../Manager-ToDos/server/config/corsOptions')
+const { faSupple } = require('@fortawesome/fontawesome-free-brands')
+
 const app = express();
 
-require('dotenv').config({ path: '../.env' });
-const mysql = require('mysql');
-/*app.use(
-  cors({
-    origin: ["http://localhost:3000", "https://managers-todos0.onrender.com", "https://managers-todos.onrender.com"],
-    //origin: ["*"],
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    optionsSuccessStatus: 204,
-  })
-);*/
 app.use(express.json());
--app.use(express.urlencoded({ extended: false }));
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "https://managers-todos.onrender.com"],
-  })
-);
-
+app.use(cors(corsOptions))
 
 const db = mysql.createPool({
   host: process.env.DB_HOST,
@@ -29,18 +17,6 @@ const db = mysql.createPool({
   database: process.env.DB_DATABASE,
   connectionLimit: 10
 })
-// Set up the CORS headers
-app.use((req, res, next) => {
-  //res.header("Access-Control-Allow-Origin", "https://managers-todos0.onrender.com");
-  //res.setHeader("Access-Control-Allow-Origin", "https://managers-todos0.onrender.com");
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-
 
 app.post('/login', (req, res) => {
   const email = req.body.email;

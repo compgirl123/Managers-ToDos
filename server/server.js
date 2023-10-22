@@ -3,7 +3,6 @@ require('dotenv').config({ path: '../.env' })
 const mysql = require('mysql')
 const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
-const { faSupple } = require('@fortawesome/fontawesome-free-brands')
 
 const app = express();
 

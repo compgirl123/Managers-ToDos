@@ -2,7 +2,7 @@ const express = require('express')
 require('dotenv').config({ path: '../.env' })
 const mysql = require('mysql')
 const cors = require('cors')
-const corsOptions = require('../../Manager-ToDos/server/config/corsOptions')
+const corsOptions = require('../config/corsOptions')
 const { faSupple } = require('@fortawesome/fontawesome-free-brands')
 
 const app = express();

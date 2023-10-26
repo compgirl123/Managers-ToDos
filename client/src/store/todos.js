@@ -55,7 +55,7 @@ export const deleteTask = createAsyncThunk(
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ taskIdToDelete }), // Send the newTask object in the request body
+        body: JSON.stringify(taskIdToDelete ), // Send the newTask object in the request body
       });
 
       const data = await response.json();

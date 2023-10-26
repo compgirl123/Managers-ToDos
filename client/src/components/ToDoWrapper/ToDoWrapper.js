@@ -21,9 +21,9 @@ export const ToDoWrapper = () => {
   const [warning, setWarning] = useState(false);
   const [value, setValue] = useState('');
 
-  useEffect(() => {
+  /*useEffect(() => {
     setTodos(todosPresent);
-  }, [todosPresent]);
+  }, [todosPresent]);*/
 
   useEffect(() => {
     console.log("Updated todos:", todos);
